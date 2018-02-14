@@ -1,0 +1,17 @@
+.box {
+  margin: 0px;
+  width: 100%;
+  padding: 0px;
+}
+.card {
+  float: left;
+  min-height: 500px;
+  margin: 0 15px 15px 0;
+}
+.card-img-top {}
+
+.cardBox {
+  height: 350px;
+  display: block;
+
+}
