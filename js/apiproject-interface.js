@@ -33,7 +33,9 @@ let blockItem = function(response) {
 $(document).ready(function() {
   let url = 'https://api.spacexdata.com/v2/launches';
   let objectsFromResponse;
+  let objectsFromJsResponse;
 
+  //API call with jQuery
   $.ajax({
     url: url,
     type: 'GET',
@@ -41,7 +43,6 @@ $(document).ready(function() {
       format: 'json'
     },
     success: function(response) {
-      console.log("before resp: " + objectsFromResponse);
       objectsFromResponse = response;
       blockItem(response);
     },
@@ -49,6 +50,20 @@ $(document).ready(function() {
       $('#errors').text("There was an error processing your request. Please try again.");
     }
   });
+
+  //API call with js
+  // let request = new XMLHttpRequest();
+  // request.onreadystatechange = function() {
+  //   if (this.readyState === 4 && this.status === 200) {
+  //     let jsResponse = JSON.parse(this.responseText);
+  //     objectsFromJsResponse = jsResponse;
+  //   }
+  // }
+  //
+  // request.open("GET", url, true);
+  // request.send();
+
+
 
   $('#listItem').click(function(){
     listItem(objectsFromResponse);
